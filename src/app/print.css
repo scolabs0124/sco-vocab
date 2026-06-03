@@ -1,0 +1,273 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* ===== 인쇄 전용 공통 스타일 ===== */
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: 11pt;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* 화면 미리보기 */
+.print-container {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+}
+
+/* A4 페이지 */
+.print-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 15mm 12mm 15mm;
+  margin: 0 auto 20px auto;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  page-break-after: always;
+}
+
+/* 헤더 */
+.print-header {
+  border-bottom: 2px solid #1a1a2e;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.print-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.print-title {
+  font-size: 15pt;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.print-subtitle {
+  font-size: 9pt;
+  color: #555;
+  margin-top: 2px;
+}
+
+.print-header-info {
+  display: flex;
+  gap: 20px;
+  font-size: 9.5pt;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.print-header-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.print-header-info .label {
+  color: #666;
+}
+
+/* 학생 정보 입력란 (테스트지) */
+.print-student-fields {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.print-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10pt;
+}
+
+.print-field .field-label {
+  color: #555;
+  white-space: nowrap;
+}
+
+.print-field .field-line {
+  border-bottom: 1px solid #333;
+  min-width: 80px;
+  height: 20px;
+}
+
+.print-field .field-line.wide {
+  min-width: 120px;
+}
+
+/* 단어 테이블 */
+.word-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+
+.word-table th {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 5px 8px;
+  text-align: left;
+  font-size: 9.5pt;
+  font-weight: 600;
+}
+
+.word-table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: middle;
+}
+
+.word-table tr:nth-child(even) td {
+  background: #f9f9f9;
+}
+
+.word-table .num {
+  color: #888;
+  font-size: 9pt;
+  width: 28px;
+  text-align: center;
+}
+
+.word-table .english {
+  font-weight: 600;
+  color: #1a1a2e;
+  width: 35%;
+}
+
+.word-table .korean {
+  color: #333;
+}
+
+.word-table .answer-line {
+  border-bottom: 1px solid #333;
+  min-width: 160px;
+  height: 18px;
+  display: inline-block;
+}
+
+/* 정답 표시 (답안지) */
+.answer-text {
+  color: #cc0000 !important;
+  font-weight: 600;
+}
+
+/* 4지선다 */
+.mc-question {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.mc-question .q-text {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.mc-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 16px;
+  padding-left: 16px;
+  font-size: 10pt;
+}
+
+.mc-choices .choice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mc-choices .choice.correct {
+  color: #cc0000;
+  font-weight: 600;
+}
+
+/* 채점란 */
+.score-box {
+  margin-top: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  gap: 24px;
+  font-size: 10pt;
+}
+
+.score-box .score-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.score-box .score-line {
+  border-bottom: 1px solid #333;
+  min-width: 60px;
+  height: 18px;
+}
+
+/* 2단 레이아웃 (학습지) */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+/* 푸터 */
+.print-footer {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5pt;
+  color: #888;
+}
+
+/* 화면 전용 버튼 영역 */
+.screen-only {
+  display: block;
+}
+
+/* 인쇄 시 */
+@media print {
+  body {
+    background: #fff !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  .print-page {
+    box-shadow: none;
+    margin: 0;
+    padding: 12mm 14mm 10mm 14mm;
+    page-break-after: always;
+  }
+
+  .print-container {
+    padding: 0;
+    max-width: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
