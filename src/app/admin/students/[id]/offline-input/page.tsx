@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { createAdminClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import OfflineInputClient from './OfflineInputClient'

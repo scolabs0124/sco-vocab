@@ -1,8 +1,9 @@
+export const dynamic = 'force-dynamic'
 import { createAdminClient } from '@/lib/supabase/server'
 import { cookies } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'
 import { redirect } from 'next/navigation'
-import PrintStudyClient from '../.././../../admin/students/[id]/print/study/PrintStudyClient'
+import PrintStudyClient from '@/app/admin/students/[id]/print/study/PrintStudyClient'
 
 export default async function StudentPrintStudyPage() {
   const cookieStore = await cookies()
